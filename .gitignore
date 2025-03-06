@@ -1,0 +1,4 @@
+/src/node_modules/*
+/src/sessions/*
+/src/.wwebjs_cache/*
+/src/logs/*

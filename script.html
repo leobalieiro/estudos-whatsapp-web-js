@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Teste de Envio de Mensagens</title>
+    <script>
+        const sessionId = '5511978324770'; // Atualize aqui
+        const apiBaseUrl = 'http://localhost:3000'; // Atualize se necessário
+
+        async function sendMessage(number, message) {
+            const url = `${apiBaseUrl}/session/${sessionId}/send-message`;
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ number, message })
+            });
+
+            if (!response.ok) {
+                console.error(`❌ Falha ao enviar para ${number}:`, await response.text());
+            } else {
+                const data = await response.json();
+                console.log(`✅ Enviado para ${number}:`, data);
+            }
+        }
+
+        async function enviarEmMassa() {
+            const mensagem = 'Olá, esta é uma mensagem de teste!';
+            const numeros = [];
+
+            for (let i = 0; i < 100; i++) {
+                const numero = `5511986949860`;
+                numeros.push(numero);
+            }
+
+            for (const numero of numeros) {
+                await sendMessage(numero, `${mensagem} - Número: ${numero}`);
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
+
+            alert('✅ Envio em massa concluído!');
+        }
+    </script>
+</head>
+<body>
+    <h1>Envio em Massa - Teste API</h1>
+    <button onclick="enviarEmMassa()">Enviar 100 Mensagens</button>
+</body>
+</html>
