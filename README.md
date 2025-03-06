@@ -99,5 +99,3 @@ Este projeto é open-source sob a licença MIT.
 ---
 
 ### Criado com ❤️ por LeossTech
-
----
