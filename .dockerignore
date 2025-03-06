@@ -1,0 +1,6 @@
+src/node_modules
+src/logs
+src/sessions
+*.log
+*.tmp
+.git
