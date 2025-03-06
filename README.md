@@ -98,7 +98,7 @@ Este projeto é open-source sob a licença MIT.
 
 ---
 
-### Criado com ❤️ por [Seu Nome ou Sua Empresa]
+### Criado com ❤️ por LeossTech
 
 ---
 
